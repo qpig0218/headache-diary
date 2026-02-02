@@ -1,0 +1,57 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  password      String
+  name          String?
+  role          String    @default("user") // "user" or "admin"
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  headacheLogs  HeadacheLog[]
+  triggerSettings TriggerSetting[]
+}
+
+model HeadacheLog {
+  id              String    @id @default(cuid())
+  userId          String
+  user            User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  date            DateTime
+  intensity       Int       // 1-10 scale
+  location        String?   // e.g., "左側", "右側", "前額", "後腦"
+  duration        Int?      // in minutes
+  notes           String?
+  weatherData     String?   // JSON string
+  airQualityData  String?   // JSON string
+  triggers        HeadacheTrigger[]
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+}
+
+model HeadacheTrigger {
+  id          String    @id @default(cuid())
+  logId       String
+  log         HeadacheLog @relation(fields: [logId], references: [id], onDelete: Cascade)
+  triggerType String    // e.g., "food", "stress", "sleep", "weather", "medication"
+  value       String    // e.g., "咖啡", "工作壓力", "睡眠不足"
+}
+
+model TriggerSetting {
+  id        String    @id @default(cuid())
+  userId    String
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  category  String    // e.g., "food", "activity", "environment"
+  name      String
+  active    Boolean   @default(true)
+  createdAt DateTime  @default(now())
+}
