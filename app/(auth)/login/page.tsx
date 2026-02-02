@@ -146,7 +146,7 @@ export default function LoginPage() {
           display: flex;
           align-items: center;
           justify-content: center;
-          gap: var(--space-3);
+          gap: var(--space-4);
           margin-bottom: var(--space-8);
           font-family: var(--font-display);
           font-size: 1.25rem;
