@@ -195,7 +195,7 @@ export default function AdminLayout({
         .logo {
           display: flex;
           align-items: center;
-          gap: var(--space-3);
+          gap: var(--space-4);
           text-decoration: none;
         }
 
