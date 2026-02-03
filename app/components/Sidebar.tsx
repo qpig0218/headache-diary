@@ -13,6 +13,8 @@ import {
     Menu,
     X,
     Plus,
+    Heart,
+    Cpu,
 } from 'lucide-react'
 import { logoutAction } from '@/app/actions/auth'
 
@@ -33,6 +35,8 @@ export default function Sidebar({ user }: SidebarProps) {
         { href: '/dashboard', icon: LayoutDashboard, label: '儀表板' },
         { href: '/diary', icon: BookOpen, label: '頭痛日記' },
         { href: '/analytics', icon: BarChart3, label: '數據分析' },
+        { href: '/health', icon: Heart, label: '健康數據' },
+        { href: '/devices', icon: Cpu, label: 'IoT 裝置' },
         { href: '/settings', icon: Settings, label: '設定' },
     ]
 

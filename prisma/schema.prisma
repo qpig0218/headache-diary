@@ -18,8 +18,11 @@ model User {
   role          String    @default("user") // "user" or "admin"
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
-  headacheLogs  HeadacheLog[]
+  headacheLogs    HeadacheLog[]
   triggerSettings TriggerSetting[]
+  healthData      HealthData[]
+  healthImports   HealthImport[]
+  iotDevices      IoTDevice[]
 }
 
 model HeadacheLog {
@@ -53,5 +56,57 @@ model TriggerSetting {
   category  String    // e.g., "food", "activity", "environment"
   name      String
   active    Boolean   @default(true)
+  createdAt DateTime  @default(now())
+}
+
+model HealthData {
+  id        String    @id @default(cuid())
+  userId    String
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  dataType  String    // "sleep", "heartRate", "steps", "bloodPressure", "bodyTemp", "bloodOxygen"
+  value     Float
+  unit      String    // "bpm", "steps", "hours", "mmHg", "°C", "%"
+  startDate DateTime
+  endDate   DateTime?
+  source    String    // "apple_health", "iot_device", "manual"
+  sourceId  String?   // device ID or import batch ID
+  metadata  String?   // JSON string for extra data
+  createdAt DateTime  @default(now())
+}
+
+model HealthImport {
+  id          String    @id @default(cuid())
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  filename    String
+  format      String    // "csv", "json", "xml"
+  recordCount Int
+  status      String    // "pending", "processing", "completed", "failed"
+  errors      String?   // JSON string
+  createdAt   DateTime  @default(now())
+}
+
+model IoTDevice {
+  id        String    @id @default(cuid())
+  userId    String
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name      String
+  type      String    // "env_sensor", "wearable", "air_quality", "custom"
+  apiKey    String    @unique
+  active    Boolean   @default(true)
+  lastSeen  DateTime?
+  createdAt DateTime  @default(now())
+  readings  DeviceReading[]
+}
+
+model DeviceReading {
+  id        String    @id @default(cuid())
+  deviceId  String
+  device    IoTDevice @relation(fields: [deviceId], references: [id], onDelete: Cascade)
+  dataType  String    // "temperature", "humidity", "pressure", "heartRate", "pm25", "noise"
+  value     Float
+  unit      String
+  timestamp DateTime
+  metadata  String?   // JSON string
   createdAt DateTime  @default(now())
 }
