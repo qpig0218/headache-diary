@@ -2,271 +2,276 @@
 
 import Link from 'next/link'
 import {
-    Brain,
-    Cloud,
-    Wind,
-    Calendar,
-    BarChart3,
-    Shield,
-    Smartphone,
-    ArrowRight,
-    Activity,
-    Sun,
-    Moon,
-    Zap,
-    Heart
+  Brain,
+  Cloud,
+  Wind,
+  Calendar,
+  BarChart3,
+  Shield,
+  Smartphone,
+  ArrowRight,
+  Activity,
+  Sun,
+  Moon,
+  Zap,
+  Heart
 } from 'lucide-react'
 
 export default function LandingPage() {
-    return (
-        <div className="landing-page">
-            {/* Header */}
-            <header className="header">
-                <div className="logo">
-                    <Brain className="icon-lg icon-gradient" />
-                    <span className="logo-text">智能頭痛日記</span>
-                </div>
-                <nav>
-                    <ul className="nav-links">
-                        <li><a href="#features" className="nav-link">功能特色</a></li>
-                        <li><a href="#how-it-works" className="nav-link">如何運作</a></li>
-                    </ul>
-                </nav>
-                <div className="header-actions">
-                    <Link href="/login" className="btn btn-ghost">登入</Link>
-                    <Link href="/register" className="btn btn-primary">免費註冊</Link>
-                </div>
-            </header>
+  return (
+    <div className="landing-page">
+      {/* Header */}
+      <header className="header">
+        <div className="logo">
+          <Brain className="icon-lg icon-gradient" />
+          <span className="logo-text">智能頭痛日記</span>
+        </div>
+        <nav>
+          <ul className="nav-links">
+            <li><a href="#features" className="nav-link">功能特色</a></li>
+            <li><a href="#how-it-works" className="nav-link">如何運作</a></li>
+          </ul>
+        </nav>
+        <div className="header-actions">
+          <Link href="/login" className="btn btn-ghost">登入</Link>
+          <Link href="/register" className="btn btn-primary">免費註冊</Link>
+        </div>
+      </header>
 
-            {/* Hero Section */}
-            <section className="hero">
-                <div className="hero-content">
-                    <div className="hero-badge">
-                        <Zap size={14} />
-                        <span>AI 智能分析</span>
-                    </div>
-                    <h1 className="hero-title">
-                        記錄頭痛<br />
-                        <span className="gradient-text">洞察規律</span>
-                    </h1>
-                    <p className="hero-description">
-                        智能頭痛日記系統，整合即時天氣、空氣品質與生活習慣追蹤，
-                        幫助您發現頭痛觸發因素，掌握健康主動權。
-                    </p>
-                    <div className="hero-actions">
-                        <Link href="/register" className="btn btn-primary btn-lg">
-                            開始使用
-                            <ArrowRight size={18} />
-                        </Link>
-                        <Link href="#features" className="btn btn-secondary btn-lg">
-                            了解更多
-                        </Link>
-                    </div>
-                    <div className="hero-stats">
-                        <div className="hero-stat">
-                            <span className="stat-number">10+</span>
-                            <span className="stat-text">追蹤因素</span>
-                        </div>
-                        <div className="hero-stat">
-                            <span className="stat-number">即時</span>
-                            <span className="stat-text">天氣整合</span>
-                        </div>
-                        <div className="hero-stat">
-                            <span className="stat-number">AI</span>
-                            <span className="stat-text">智能分析</span>
-                        </div>
-                    </div>
-                </div>
-                <div className="hero-visual">
-                    <div className="hero-card hero-card-1">
-                        <div className="mini-card-icon">
-                            <Activity className="icon-gradient" />
-                        </div>
-                        <div className="mini-card-content">
-                            <span className="mini-card-label">今日頭痛指數</span>
-                            <span className="mini-card-value">2/10</span>
-                        </div>
-                    </div>
-                    <div className="hero-card hero-card-2">
-                        <div className="mini-card-icon">
-                            <Sun className="icon-gradient" />
-                        </div>
-                        <div className="mini-card-content">
-                            <span className="mini-card-label">天氣狀況</span>
-                            <span className="mini-card-value">晴朗 25°C</span>
-                        </div>
-                    </div>
-                    <div className="hero-card hero-card-3">
-                        <div className="mini-card-icon">
-                            <Wind className="icon-gradient" />
-                        </div>
-                        <div className="mini-card-content">
-                            <span className="mini-card-label">空氣品質</span>
-                            <span className="mini-card-value badge-success">良好 AQI 45</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
+      {/* Hero Section */}
+      <section className="hero">
+        <div className="hero-content">
+          <div className="hero-badge">
+            <Zap size={14} />
+            <span>AI 智能分析</span>
+          </div>
+          <h1 className="hero-title">
+            記錄頭痛<br />
+            <span className="gradient-text">洞察規律</span>
+          </h1>
+          <p className="hero-description">
+            智能頭痛日記系統，整合即時天氣、空氣品質與生活習慣追蹤，
+            幫助您發現頭痛觸發因素，掌握健康主動權。
+          </p>
+          <div className="hero-actions">
+            <Link href="/register" className="btn btn-primary btn-lg">
+              開始使用
+              <ArrowRight size={18} />
+            </Link>
+            <Link href="#features" className="btn btn-secondary btn-lg">
+              了解更多
+            </Link>
+          </div>
+          <div className="hero-stats">
+            <div className="hero-stat">
+              <span className="stat-number">10+</span>
+              <span className="stat-text">追蹤因素</span>
+            </div>
+            <div className="hero-stat">
+              <span className="stat-number">即時</span>
+              <span className="stat-text">天氣整合</span>
+            </div>
+            <div className="hero-stat">
+              <span className="stat-number">AI</span>
+              <span className="stat-text">智能分析</span>
+            </div>
+          </div>
+        </div>
+        <div className="hero-visual">
+          <div className="hero-card hero-card-1">
+            <div className="mini-card-icon">
+              <Activity className="icon-gradient" />
+            </div>
+            <div className="mini-card-content">
+              <span className="mini-card-label">今日頭痛指數</span>
+              <span className="mini-card-value">2/10</span>
+            </div>
+          </div>
+          <div className="hero-card hero-card-2">
+            <div className="mini-card-icon">
+              <Sun className="icon-gradient" />
+            </div>
+            <div className="mini-card-content">
+              <span className="mini-card-label">天氣狀況</span>
+              <span className="mini-card-value">晴朗 25°C</span>
+            </div>
+          </div>
+          <div className="hero-card hero-card-3">
+            <div className="mini-card-icon">
+              <Wind className="icon-gradient" />
+            </div>
+            <div className="mini-card-content">
+              <span className="mini-card-label">空氣品質</span>
+              <span className="mini-card-value badge-success">良好 AQI 45</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
-            {/* Features Section - Bento Grid */}
-            <section id="features" className="features-section">
-                <div className="section-header">
-                    <h2>核心功能</h2>
-                    <p>全方位的頭痛追蹤與分析系統</p>
-                </div>
+      {/* Features Section - Bento Grid */}
+      <section id="features" className="features-section">
+        <div className="section-header">
+          <h2>核心功能</h2>
+          <p>全方位的頭痛追蹤與分析系統</p>
+        </div>
 
-                <div className="bento-grid features-grid">
-                    {/* Large Feature Card */}
-                    <div className="bento-item bento-span-2 bento-row-2 feature-card feature-main">
-                        <div className="feature-icon-large">
-                            <Brain size={48} />
-                        </div>
-                        <h3>智能記錄系統</h3>
-                        <p>
-                            快速記錄頭痛發作時間、強度、位置與持續時間。
-                            系統自動關聯當時的天氣、空氣品質等環境因素。
-                        </p>
-                        <div className="feature-preview">
-                            <div className="intensity-preview">
-                                {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(level => (
-                                    <div
-                                        key={level}
-                                        className={`intensity-dot level-${level} ${level <= 3 ? 'active' : ''}`}
-                                    >
-                                        {level}
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
+        <div className="bento-grid features-grid">
+          {/* Large Feature Card */}
+          <div className="bento-item bento-span-2 bento-row-2 feature-card feature-main">
+            <div className="feature-icon-large">
+              <Brain size={48} />
+            </div>
+            <h3>智能記錄系統</h3>
+            <p>
+              快速記錄頭痛發作時間、強度、位置與持續時間。
+              系統自動關聯當時的天氣、空氣品質等環境因素。
+            </p>
+            <div className="feature-preview">
+              <div className="intensity-preview">
+                {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(level => (
+                  <div
+                    key={level}
+                    className={`intensity-dot level-${level} ${level <= 3 ? 'active' : ''}`}
+                  >
+                    {level}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
 
-                    {/* Weather Integration */}
-                    <div className="bento-item feature-card">
-                        <div className="feature-icon">
-                            <Cloud size={28} />
-                        </div>
-                        <h4>天氣追蹤</h4>
-                        <p>自動記錄溫度、濕度、氣壓變化，分析天氣對頭痛的影響。</p>
-                    </div>
+          {/* Weather Integration */}
+          <div className="bento-item feature-card">
+            <div className="feature-icon">
+              <Cloud size={28} />
+            </div>
+            <h4>天氣追蹤</h4>
+            <p>自動記錄溫度、濕度、氣壓變化，分析天氣對頭痛的影響。</p>
+          </div>
 
-                    {/* Air Quality */}
-                    <div className="bento-item feature-card">
-                        <div className="feature-icon">
-                            <Wind size={28} />
-                        </div>
-                        <h4>空氣品質監測</h4>
-                        <p>整合 AQI 指數，追蹤 PM2.5 等污染物對頭痛的潛在影響。</p>
-                    </div>
+          {/* Air Quality */}
+          <div className="bento-item feature-card">
+            <div className="feature-icon">
+              <Wind size={28} />
+            </div>
+            <h4>空氣品質監測</h4>
+            <p>整合 AQI 指數，追蹤 PM2.5 等污染物對頭痛的潛在影響。</p>
+          </div>
 
-                    {/* Analytics */}
-                    <div className="bento-item bento-span-2 feature-card">
-                        <div className="feature-icon">
-                            <BarChart3 size={28} />
-                        </div>
-                        <h4>數據視覺化分析</h4>
-                        <p>直覺化圖表呈現頭痛趨勢，發現週期性規律與觸發因素關聯。</p>
-                        <div className="chart-preview">
-                            <div className="chart-bar" style={{ height: '40%' }}></div>
-                            <div className="chart-bar" style={{ height: '60%' }}></div>
-                            <div className="chart-bar" style={{ height: '30%' }}></div>
-                            <div className="chart-bar" style={{ height: '80%' }}></div>
-                            <div className="chart-bar" style={{ height: '50%' }}></div>
-                            <div className="chart-bar" style={{ height: '70%' }}></div>
-                            <div className="chart-bar" style={{ height: '45%' }}></div>
-                        </div>
-                    </div>
+          {/* Analytics */}
+          <div className="bento-item bento-span-2 feature-card">
+            <div className="feature-icon">
+              <BarChart3 size={28} />
+            </div>
+            <h4>數據視覺化分析</h4>
+            <p>直覺化圖表呈現頭痛趨勢，發現週期性規律與觸發因素關聯。</p>
+            <div className="chart-preview">
+              <div className="chart-bar" style={{ height: '40%' }}></div>
+              <div className="chart-bar" style={{ height: '60%' }}></div>
+              <div className="chart-bar" style={{ height: '30%' }}></div>
+              <div className="chart-bar" style={{ height: '80%' }}></div>
+              <div className="chart-bar" style={{ height: '50%' }}></div>
+              <div className="chart-bar" style={{ height: '70%' }}></div>
+              <div className="chart-bar" style={{ height: '45%' }}></div>
+            </div>
+          </div>
 
-                    {/* Calendar View */}
-                    <div className="bento-item feature-card">
-                        <div className="feature-icon">
-                            <Calendar size={28} />
-                        </div>
-                        <h4>日曆視圖</h4>
-                        <p>月曆模式一覽頭痛發作頻率與模式。</p>
-                    </div>
+          {/* Calendar View */}
+          <div className="bento-item feature-card">
+            <div className="feature-icon">
+              <Calendar size={28} />
+            </div>
+            <h4>日曆視圖</h4>
+            <p>月曆模式一覽頭痛發作頻率與模式。</p>
+          </div>
 
-                    {/* Mobile Responsive */}
-                    <div className="bento-item feature-card">
-                        <div className="feature-icon">
-                            <Smartphone size={28} />
-                        </div>
-                        <h4>跨裝置同步</h4>
-                        <p>響應式設計，手機、平板、電腦隨時記錄。</p>
-                    </div>
-                </div>
-            </section>
+          {/* Mobile Responsive */}
+          <div className="bento-item feature-card">
+            <div className="feature-icon">
+              <Smartphone size={28} />
+            </div>
+            <h4>跨裝置同步</h4>
+            <p>響應式設計，手機、平板、電腦隨時記錄。</p>
+          </div>
+        </div>
+      </section>
 
-            {/* How It Works */}
-            <section id="how-it-works" className="how-it-works-section">
-                <div className="section-header">
-                    <h2>如何運作</h2>
-                    <p>簡單三步驟，開始追蹤您的頭痛模式</p>
-                </div>
+      {/* How It Works */}
+      <section id="how-it-works" className="how-it-works-section">
+        <div className="section-header">
+          <h2>如何運作</h2>
+          <p>簡單三步驟，開始追蹤您的頭痛模式</p>
+        </div>
 
-                <div className="steps-container">
-                    <div className="step-card">
-                        <div className="step-number">01</div>
-                        <div className="step-icon">
-                            <Heart size={32} />
-                        </div>
-                        <h4>記錄頭痛</h4>
-                        <p>發作時快速記錄強度、位置與症狀，系統自動記錄時間與環境數據。</p>
-                    </div>
+        <div className="steps-container">
+          <div className="step-card">
+            <div className="step-number">01</div>
+            <div className="step-icon">
+              <Heart size={32} />
+            </div>
+            <h4>記錄頭痛</h4>
+            <p>發作時快速記錄強度、位置與症狀，系統自動記錄時間與環境數據。</p>
+          </div>
 
-                    <div className="step-connector">
-                        <ArrowRight size={24} />
-                    </div>
+          <div className="step-connector">
+            <ArrowRight size={24} />
+          </div>
 
-                    <div className="step-card">
-                        <div className="step-number">02</div>
-                        <div className="step-icon">
-                            <Activity size={32} />
-                        </div>
-                        <h4>累積數據</h4>
-                        <p>持續記錄建立個人健康資料庫，系統分析各種因素的關聯性。</p>
-                    </div>
+          <div className="step-card">
+            <div className="step-number">02</div>
+            <div className="step-icon">
+              <Activity size={32} />
+            </div>
+            <h4>累積數據</h4>
+            <p>持續記錄建立個人健康資料庫，系統分析各種因素的關聯性。</p>
+          </div>
 
-                    <div className="step-connector">
-                        <ArrowRight size={24} />
-                    </div>
+          <div className="step-connector">
+            <ArrowRight size={24} />
+          </div>
 
-                    <div className="step-card">
-                        <div className="step-number">03</div>
-                        <div className="step-icon">
-                            <BarChart3 size={32} />
-                        </div>
-                        <h4>洞察規律</h4>
-                        <p>視覺化報表呈現頭痛模式，發現觸發因素並預防未來發作。</p>
-                    </div>
-                </div>
-            </section>
+          <div className="step-card">
+            <div className="step-number">03</div>
+            <div className="step-icon">
+              <BarChart3 size={32} />
+            </div>
+            <h4>洞察規律</h4>
+            <p>視覺化報表呈現頭痛模式，發現觸發因素並預防未來發作。</p>
+          </div>
+        </div>
+      </section>
 
-            {/* CTA Section */}
-            <section className="cta-section">
-                <div className="cta-content">
-                    <h2>準備好開始了嗎？</h2>
-                    <p>免費註冊，開始智能追蹤您的頭痛模式</p>
-                    <Link href="/register" className="btn btn-primary btn-lg">
-                        立即開始
-                        <ArrowRight size={18} />
-                    </Link>
-                </div>
-            </section>
+      {/* CTA Section */}
+      <section className="cta-section">
+        <div className="cta-content">
+          <h2>準備好開始了嗎？</h2>
+          <p>免費註冊，開始智能追蹤您的頭痛模式</p>
+          <Link href="/register" className="btn btn-primary btn-lg">
+            立即開始
+            <ArrowRight size={18} />
+          </Link>
+        </div>
+      </section>
 
-            {/* Footer */}
-            <footer className="footer">
-                <div className="footer-content">
-                    <div className="footer-brand">
-                        <Brain className="icon-lg icon-gradient" />
-                        <span>智能頭痛日記</span>
-                    </div>
-                    <p className="footer-copy">
-                        © 2026 智能頭痛日記. All rights reserved.
-                    </p>
-                </div>
-            </footer>
+      {/* Footer */}
+      <footer className="footer">
+        <div className="footer-content">
+          <div className="footer-brand">
+            <Brain className="icon-lg icon-gradient" />
+            <span>智能頭痛日記</span>
+          </div>
+          <div className="footer-info">
+            <p className="footer-company">
+              本一科技股份有限公司 Ben Yi Technology Co., Ltd.
+            </p>
+            <p className="footer-copy">
+              © 2026 本一科技. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
 
-            <style jsx>{`
+      <style jsx>{`
         .landing-page {
           min-height: 100vh;
         }
@@ -631,6 +636,17 @@ export default function LandingPage() {
           color: var(--color-text-muted);
         }
 
+        .footer-info {
+          text-align: right;
+        }
+
+        .footer-company {
+          font-size: 0.9rem;
+          font-weight: 500;
+          color: var(--color-text-secondary);
+          margin-bottom: var(--space-1);
+        }
+
         /* Responsive */
         @media (max-width: 1024px) {
           .hero {
@@ -699,8 +715,12 @@ export default function LandingPage() {
             gap: var(--space-4);
             text-align: center;
           }
+
+          .footer-info {
+            text-align: center;
+          }
         }
       `}</style>
-        </div>
-    )
+    </div>
+  )
 }
