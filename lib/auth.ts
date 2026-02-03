@@ -20,7 +20,7 @@ export async function createSession(userId: string): Promise<string> {
 
 export async function getSession(): Promise<SessionUser | null> {
     try {
-        const cookieStore = await cookies()
+        const cookieStore = cookies()
         const sessionCookie = cookieStore.get('session')
 
         if (!sessionCookie) {

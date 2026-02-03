@@ -28,7 +28,7 @@ export async function loginAction(prevState: any, formData: FormData) {
 
     const sessionToken = Buffer.from(`${user.id}:${Date.now()}`).toString('base64')
 
-    const cookieStore = await cookies()
+    const cookieStore = cookies()
     cookieStore.set('session', sessionToken, {
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',
@@ -107,7 +107,7 @@ export async function registerAction(prevState: any, formData: FormData) {
 }
 
 export async function logoutAction() {
-    const cookieStore = await cookies()
+    const cookieStore = cookies()
     cookieStore.delete('session')
     redirect('/login')
 }
